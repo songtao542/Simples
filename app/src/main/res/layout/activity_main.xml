@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.le.contentprovidertest.com.song.example.provider.MainActivity">
+
+    <TextView
+        android:id="@+id/categoryLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:text="CategoryCode:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/categoryCode"
+        android:layout_width="126dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="51dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/categoryLabel2"
+        app:layout_constraintLeft_toRightOf="@+id/categoryLabel2"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="51dp" />
+
+    <TextView
+        android:id="@+id/categoryLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:text="CategoryName:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryLabel2"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/categoryName"
+        android:layout_width="126dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="46dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/categoryLabel1"
+        app:layout_constraintLeft_toRightOf="@+id/categoryLabel1"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="46dp" />
+
+
+    <Button
+        android:id="@+id/insertCategory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="InsertCategory"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categoryLabel1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/bookLabel1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="40dp"
+        android:text="BookName:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookLabel2"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="16dp" />
+
+    <EditText
+        android:id="@+id/bookName"
+        android:layout_width="126dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="70dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bookLabel1"
+        app:layout_constraintLeft_toRightOf="@+id/bookLabel1"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="70dp" />
+
+    <TextView
+        android:id="@+id/bookLabel2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BookCategory:"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/insertCategory"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/bookCategory"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bookLabel2"
+        app:layout_constraintLeft_toRightOf="@+id/bookLabel2"
+        tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/insertBook"
+        android:layout_width="151dp"
+        android:layout_height="55dp"
+        android:layout_marginLeft="19dp"
+        android:layout_marginTop="47dp"
+        android:text="Insert"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bookLabel1"
+        tools:ignore="MissingConstraints"
+        android:layout_marginStart="19dp" />
+
+    <TextView
+        android:id="@+id/books"
+        android:layout_width="372dp"
+        android:layout_height="182dp"
+        android:text=""
+        android:background="#dddddd"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="6dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintTop_toBottomOf="@+id/insertBook" />
+
+</android.support.constraint.ConstraintLayout>

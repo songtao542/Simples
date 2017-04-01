@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.song.example.nestedscroll.NestedScrollParentView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffff44ff"
+    android:orientation="vertical"
+    tools:context="com.song.example.nestedscroll.Main4Activity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:background="#ff444444"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="AAAAAAAAAAAA"
+            android:textColor="#ffff0000" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:text="BBBBBB"
+            android:textColor="@color/aaa" />
+
+    </LinearLayout>
+
+    <com.song.example.nestedscroll.NestedScrollChildView
+        android:id="@+id/nestedScrollChildView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff00aaaa" />
+
+</com.song.example.nestedscroll.NestedScrollParentView>

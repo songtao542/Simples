@@ -1,0 +1,141 @@
+apply plugin: 'com.android.application'
+
+public class BuildTimeListener implements TaskExecutionListener, BuildListener {
+    private Clock clock
+    private times = []
+
+    @Override
+    void beforeExecute(Task task) {
+        clock = new org.gradle.util.Clock()
+
+    }
+
+    @Override
+    void afterExecute(Task task, TaskState taskState) {
+        def ms = clock.timeInMs
+        times.add([ms, task.path])
+
+        //task.project.logger.warn "${task.path} spend ${ms}ms"
+    }
+
+    @Override
+    void buildStarted(Gradle gradle) {
+    }
+
+    @Override
+    void settingsEvaluated(Settings settings) {
+    }
+
+    @Override
+    void projectsLoaded(Gradle gradle) {
+    }
+
+    @Override
+    void projectsEvaluated(Gradle gradle) {
+    }
+
+    @Override
+    void buildFinished(BuildResult result) {
+        println "Task spend time:"
+        for (time in times) {
+//            if (time[0] >= 50) {
+            printf "%7sms  %s \n", time
+//            }
+        }
+
+
+    }
+}
+
+project.gradle.addListener(new BuildTimeListener())
+project.gradle.buildFinished {
+    def m = project.configurations.getAsMap();
+    for (i in m) {
+        printf("configur:" + i + "\n")
+    }
+}
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "com.example.le.contentprovidertest"
+        minSdkVersion 23
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs {
+        release {
+            storeFile file("../keystore.jks")
+            storePassword "123456"
+            keyAlias "keyalias"
+            keyPassword "123456"
+        }
+    }
+
+    compileOptions {
+        targetCompatibility org.gradle.api.JavaVersion.VERSION_1_7
+        sourceCompatibility org.gradle.api.JavaVersion.VERSION_1_7
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+
+        releaseOs {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        demo {
+            applicationId "com.song.demo"
+            versionName "1.0_debug"
+        }
+
+        full {
+            applicationId "com.song.full"
+            versionName "1.0_full"
+        }
+    }
+}
+
+configurations {
+    //fullReleaseCompile
+    //fullReleaseACompile
+}
+
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    //fullReleaseCompile "com.android.support:cardview-v7:25.+"
+    //fullReleaseCompile project(path:':library',configuration: 'fullRelease')
+//    fullReleaseCompile project(path:':library',configuration: 'release')
+    //fullReleaseCompile "com.android.support:cardview-v7:25.+"
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:design:25.3.1'
+    compile 'com.google.dagger:dagger:2.+'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.+'
+    demoCompile 'com.android.support:cardview-v7:25.3.1'
+    fullCompile 'com.android.support:cardview-v7:25.3.1'
+    releaseCompile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.squareup.retrofit2:retrofit:2.2.0'
+    // https://mvnrepository.com/artifact/com.squareup.retrofit2/converter-gson
+    compile 'com.squareup.retrofit2:converter-gson:2.2.0'
+    // https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor
+    compile 'com.squareup.okhttp3:logging-interceptor:3.6.0'
+
+}
