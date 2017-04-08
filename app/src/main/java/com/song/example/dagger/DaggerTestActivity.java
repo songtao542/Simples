@@ -5,6 +5,7 @@ import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
@@ -41,11 +42,13 @@ public class DaggerTestActivity extends AppCompatActivity {
     @Inject
     TestObject mTestObject;
 
+    TextView mTextView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dagger_test);
-
+        mTextView = (TextView) findViewById(R.id.text);
         try {
             ApplicationComponent applicationComponent = ((SimpleApplication) getApplication()).getComponent();
             ApiService apiServiceFromApp = applicationComponent.apiService();
@@ -67,6 +70,7 @@ public class DaggerTestActivity extends AppCompatActivity {
                             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
                     Gson gson = builder.create();
                     Log.d("DaggerTestActivity", "user:" + gson.toJson(response.body()));
+                    mTextView.setText("Response:" + response.body());
                 }
 
                 @Override

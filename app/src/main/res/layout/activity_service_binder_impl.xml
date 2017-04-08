@@ -7,19 +7,19 @@
     android:layout_width="match_parent"
     android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context="com.song.example.service.MessengerActivity">
+    tools:context="com.song.example.service.BinderActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="来自Service的回复：" />
+        android:text="当前点：" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Message From Button1"
+        android:text="获取当前点"
         tools:layout_editor_absoluteX="147dp"
         tools:layout_editor_absoluteY="27dp" />
 
@@ -27,13 +27,13 @@
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="来自Service的回复：" />
+        android:text="当前点与(9,10)之间距离：" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Message From Button2"
+        android:text="计算当前点与(9,10)之间距离"
         tools:layout_editor_absoluteX="148dp"
         tools:layout_editor_absoluteY="121dp" />
 
@@ -41,14 +41,26 @@
         android:id="@+id/textView3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="来自Service的回复：" />
+        android:text="当前点是否与(3,4)重合：" />
 
     <Button
         android:id="@+id/button3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Send Message From Button3"
+        android:text="当前点是否与(3,4)重合"
         tools:layout_editor_absoluteY="231dp"
         tools:layout_editor_absoluteX="148dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="(5,6)与(12,15)之间距离：" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="计算(5,6)与(12,15)之间距离" />
 
 </LinearLayout>

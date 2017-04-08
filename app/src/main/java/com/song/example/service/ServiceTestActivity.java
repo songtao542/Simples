@@ -13,7 +13,7 @@ import android.widget.Button;
 import com.song.example.R;
 
 public class ServiceTestActivity extends AppCompatActivity implements View.OnClickListener {
-    static final String TAG = "LauncherActivity";
+    static final String TAG = "ServiceTestActivity";
 
     Button button1;
     Button button2;
@@ -23,12 +23,11 @@ public class ServiceTestActivity extends AppCompatActivity implements View.OnCli
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_test);
         IntentFilter filter = new IntentFilter();
-        Log.e("remotebbbb","broadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcat");
         filter.addAction(Intent.ACTION_MEDIA_BUTTON);
         registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Log.d("remoteaaa","broadcat");
+                Log.d(TAG,"ACTION_MEDIA_BUTTON");
             }
         },filter);
         button1 = (Button) findViewById(R.id.button);

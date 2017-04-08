@@ -14,9 +14,11 @@
         android:background="#ff444444"
         android:orientation="vertical">
 
-        <Button
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="90dp"
+            android:gravity="center"
             android:text="Test"
             android:textColor="@color/aaa" />
 

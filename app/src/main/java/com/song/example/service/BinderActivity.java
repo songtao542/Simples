@@ -16,7 +16,7 @@ import android.widget.TextView;
 import com.song.example.R;
 
 public class BinderActivity extends AppCompatActivity implements View.OnClickListener {
-    static final String TAG = "MainActivity2";
+    static final String TAG = "BinderActivity";
     Button bt1;
     Button bt2;
     Button bt3;
@@ -32,11 +32,11 @@ public class BinderActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_service_messenger_impl);
+        setContentView(R.layout.activity_service_binder_impl);
 
         Intent intent = new Intent();
-        intent.setAction("com.aper.testapp.MyService2");
-        intent.setPackage("com.aper.testapp");
+        intent.setAction("com.song.example.service.BinderService");
+        intent.setPackage(getPackageName());
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
 
         bt1 = (Button) findViewById(R.id.button);
@@ -53,6 +53,12 @@ public class BinderActivity extends AppCompatActivity implements View.OnClickLis
         bt2.setOnClickListener(this);
         bt3.setOnClickListener(this);
         bt4.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(connection);
     }
 
     @Override

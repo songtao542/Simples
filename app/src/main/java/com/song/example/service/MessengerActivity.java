@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.song.example.R;
 
 public class MessengerActivity extends AppCompatActivity implements View.OnClickListener {
-    static final String TAG = "MainActivity";
+    static final String TAG = "MessengerActivity";
     Messenger remoteMessenger;
 
     Button send1;
@@ -57,11 +57,11 @@ public class MessengerActivity extends AppCompatActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_service_binder_impl);
+        setContentView(R.layout.activity_service_messenger_impl);
 
         Intent intent = new Intent();
-        intent.setAction("com.aper.testapp.MyService");
-        intent.setPackage("com.aper.testapp");
+        intent.setAction("com.song.example.service.MessengerService");
+        intent.setPackage(getPackageName());
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
 
         send1 = (Button) findViewById(R.id.button);
@@ -75,6 +75,12 @@ public class MessengerActivity extends AppCompatActivity implements View.OnClick
         send1.setOnClickListener(this);
         send2.setOnClickListener(this);
         send3.setOnClickListener(this);
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unbindService(connection);
     }
 
     @Override

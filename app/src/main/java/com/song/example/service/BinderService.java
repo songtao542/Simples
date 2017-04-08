@@ -9,8 +9,6 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
-import com.song.example.service.IMyService;
-
 public class BinderService extends Service {
 
     Point current = new Point(3, 4);
@@ -21,14 +19,13 @@ public class BinderService extends Service {
     public void onCreate() {
         super.onCreate();
         IntentFilter filter = new IntentFilter();
-        Log.e("remotebbbb","broadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcatbroadcat");
         filter.addAction(Intent.ACTION_MEDIA_BUTTON);
         registerReceiver(new BroadcastReceiver() {
             @Override
             public void onReceive(Context context, Intent intent) {
-                Log.d("remoteaaa","broadcat");
+                Log.d("BinderService", "ACTION_MEDIA_BUTTON");
             }
-        },filter);
+        }, filter);
     }
 
 
@@ -39,7 +36,6 @@ public class BinderService extends Service {
         }
         return serviceInner;
     }
-
 
 
     private double distance(Point p1, Point p2) {

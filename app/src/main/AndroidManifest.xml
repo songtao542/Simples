@@ -30,7 +30,29 @@
 
         <activity android:name=".service.MessengerActivity" />
 
+
         <activity android:name=".service.BinderActivity" />
+
+
+        <service
+            android:name=".service.BinderService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.song.example.service.BinderService" />
+            </intent-filter>
+        </service>
+
+        <service
+            android:name=".service.MessengerService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter>
+                <action android:name="com.song.example.service.MessengerService" />
+            </intent-filter>
+        </service>
 
 
         <activity
