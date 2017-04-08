@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.song.example.scroller.Main3Activity">
+    tools:context="com.song.example.scroller.ScrollerTestActivity">
 
     <Button
         android:id="@+id/button"

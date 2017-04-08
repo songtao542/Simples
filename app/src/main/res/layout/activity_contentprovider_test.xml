@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.le.contentprovidertest.com.song.example.provider.MainActivity">
+    tools:context="com.song.example.provider.ContentProviderTestActivity">
 
     <TextView
         android:id="@+id/categoryLabel2"

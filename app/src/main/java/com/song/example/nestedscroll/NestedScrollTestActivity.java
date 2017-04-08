@@ -7,14 +7,14 @@ import android.widget.TextView;
 import com.song.example.Example;
 import com.song.example.R;
 
-public class Main4Activity extends AppCompatActivity {
+public class NestedScrollTestActivity extends AppCompatActivity {
 
     NestedScrollChildView mNestedScrollChildView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4);
+        setContentView(R.layout.activity_nested_scroll_test);
         mNestedScrollChildView = (NestedScrollChildView) findViewById(R.id.nestedScrollChildView);
         TextView textView = (TextView) findViewById(R.id.textView);
         textView.setText(Example.NAME);

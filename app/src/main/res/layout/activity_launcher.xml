@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.song.example.LauncherActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/dagger_test"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/title_activity_dagger_test" />
+
+        <Button
+            android:id="@+id/contentprovider_test"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/title_activity_contentprovider_test" />
+
+        <Button
+            android:id="@+id/scroller_test"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/title_activity_scroller_test" />
+
+        <Button
+            android:id="@+id/nestedscroll_test"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/title_activity_nestedscroll_test" />
+        <Button
+            android:id="@+id/service_test"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/title_activity_service_test" />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

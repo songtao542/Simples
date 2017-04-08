@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.song.example">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".dagger.SimpleApplication"
@@ -12,49 +12,44 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.song.example.dagger.Main6Activity"
-            android:label="@string/title_activity_main6">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
-            android:name="com.song.example.nestedscroll.Main4Activity"
-            android:label="@string/title_activity_main4">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".dagger.DaggerTestActivity"
+            android:label="@string/title_activity_dagger_test" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
-            android:name="com.song.example.scroller.Main3Activity"
-            android:label="@string/title_activity_main3" />
-        <activity
-            android:name="com.song.example.nestedscroll.Main2Activity"
-            android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.Design.Light" />
-        <activity android:name="com.song.example.provider.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:name=".nestedscroll.NestedScrollTestActivity"
+            android:label="@string/title_activity_nestedscroll_test" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity
+            android:name=".scroller.ScrollerTestActivity"
+            android:label="@string/title_activity_scroller_test" />
+
+        <activity
+            android:name=".service.ServiceTestActivity"
+            android:label="@string/title_activity_service_test" />
+
+        <activity android:name=".service.MessengerActivity" />
+
+        <activity android:name=".service.BinderActivity" />
+
+
+        <activity
+            android:name=".provider.ContentProviderTestActivity"
+            android:label="@string/title_activity_contentprovider_test" />
 
         <provider
-            android:name="com.song.example.provider.BookProvider"
+            android:name=".provider.BookProvider"
             android:authorities="com.exam.book.provider"
             android:enabled="true"
             android:exported="true" />
 
-        <activity
-            android:name="com.song.example.nestedscroll.ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".LauncherActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

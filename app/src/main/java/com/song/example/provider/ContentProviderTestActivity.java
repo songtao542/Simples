@@ -18,7 +18,7 @@ import com.song.example.provider.BookContent.CategoryColumns;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class ContentProviderTestActivity extends AppCompatActivity {
 
     EditText mCategoryCode;
     EditText mCategoryName;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_contentprovider_test);
 
         mCategoryCode = (EditText) findViewById(R.id.categoryCode);
         mCategoryName = (EditText) findViewById(R.id.categoryName);

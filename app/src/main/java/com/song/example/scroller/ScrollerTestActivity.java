@@ -7,14 +7,14 @@ import android.view.View;
 import com.song.example.R;
 
 
-public class Main3Activity extends AppCompatActivity {
+public class ScrollerTestActivity extends AppCompatActivity {
 
     ScrollerExampleView mScrollerExampleView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main3);
+        setContentView(R.layout.activity_scroller_test);
         mScrollerExampleView = (ScrollerExampleView) findViewById(R.id.scrollerExampleView);
 
         findViewById(R.id.button).setOnClickListener(new View.OnClickListener() {

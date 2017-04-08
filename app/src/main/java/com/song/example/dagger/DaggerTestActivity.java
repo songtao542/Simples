@@ -21,12 +21,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class Main6Activity extends AppCompatActivity {
+public class DaggerTestActivity extends AppCompatActivity {
 
     @ActivityScope
     @Component(dependencies = ApplicationComponent.class)
     interface ActivityComponent {
-        void inject(Main6Activity activity);
+        void inject(DaggerTestActivity activity);
     }
 
     @Inject
@@ -39,34 +39,34 @@ public class Main6Activity extends AppCompatActivity {
     Context mApplicationContext;
 
     @Inject
-    MainTest mMainTest;
+    TestObject mTestObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main6);
+        setContentView(R.layout.activity_dagger_test);
 
         try {
             ApplicationComponent applicationComponent = ((SimpleApplication) getApplication()).getComponent();
             ApiService apiServiceFromApp = applicationComponent.apiService();
 
-            DaggerMain6Activity_ActivityComponent.builder().applicationComponent(applicationComponent).build().inject(this);
+            DaggerDaggerTestActivity_ActivityComponent.builder().applicationComponent(applicationComponent).build().inject(this);
             Call<User> userCall = mApiService.getUser("songtao542");
 
-            Log.d("Main6Activity", "apiServiceFromApp=" + apiServiceFromApp);
-            Log.d("Main6Activity", "mApiService=======" + mApiService);
-            Log.d("Main6Activity", "mApiService==apiServiceFromApp : " + (mApiService == apiServiceFromApp));
-            Log.d("Main6Activity", "mApiService.mApiParser=" + mApiService.mApiParser);
+            Log.d("DaggerTestActivity", "apiServiceFromApp=" + apiServiceFromApp);
+            Log.d("DaggerTestActivity", "mApiService=======" + mApiService);
+            Log.d("DaggerTestActivity", "mApiService==apiServiceFromApp : " + (mApiService == apiServiceFromApp));
+            Log.d("DaggerTestActivity", "mApiService.mApiParser=" + mApiService.mApiParser);
 
             userCall.enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
-                    Log.d("Main6Activity", "onResponse" + response.body());
+                    Log.d("DaggerTestActivity", "onResponse" + response.body());
 
                     GsonBuilder builder = new GsonBuilder()
                             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
                     Gson gson = builder.create();
-                    Log.d("Main6Activity", "user:" + gson.toJson(response.body()));
+                    Log.d("DaggerTestActivity", "user:" + gson.toJson(response.body()));
                 }
 
                 @Override
@@ -77,13 +77,13 @@ public class Main6Activity extends AppCompatActivity {
 
             List<String> providers = mLocationManager.getAllProviders();
             for (String s : providers) {
-                Log.d("Main6Activity", "provider:" + s);
+                Log.d("DaggerTestActivity", "provider:" + s);
             }
-            Log.d("Main6Activity", "mMainTest:" + mMainTest);
+            Log.d("DaggerTestActivity", "mTestObject:" + mTestObject);
 
-            Log.d("Main6Activity", "mMainTest.ApiService == mApiService " + (mMainTest.mApiService == mApiService));
-            Log.d("Main6Activity", "mMainTest.mContext == mApplicationContext " + (mMainTest.mContext == mApplicationContext));
-            Log.d("Main6Activity", "mMainTest.mLocationManager == mLocationManager " + (mMainTest.mLocationManager == mLocationManager));
+            Log.d("DaggerTestActivity", "mTestObject.ApiService == mApiService " + (mTestObject.mApiService == mApiService));
+            Log.d("DaggerTestActivity", "mTestObject.mContext == mApplicationContext " + (mTestObject.mContext == mApplicationContext));
+            Log.d("DaggerTestActivity", "mTestObject.mLocationManager == mLocationManager " + (mTestObject.mLocationManager == mLocationManager));
         } catch (Exception e) {
             e.printStackTrace();
         }
