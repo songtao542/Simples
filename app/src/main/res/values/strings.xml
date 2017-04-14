@@ -5,6 +5,7 @@
     <string name="title_activity_nestedscroll_test">Nested Scroll Test Activity</string>
     <string name="title_activity_dagger_test">Dagger Test Activity</string>
     <string name="title_activity_service_test">Service Test Activity</string>
+    <string name="title_activity_rxjava_test">Rxjava Test Activity</string>
 
     <string name="action_settings">Settings</string>
 </resources>

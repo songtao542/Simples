@@ -39,6 +39,11 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:text="@string/title_activity_service_test" />
+        <Button
+            android:id="@+id/rxjava_test"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/title_activity_rxjava_test" />
 
 
     </LinearLayout>

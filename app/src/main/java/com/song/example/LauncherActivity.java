@@ -10,6 +10,7 @@ import android.widget.Button;
 import com.song.example.dagger.DaggerTestActivity;
 import com.song.example.nestedscroll.NestedScrollTestActivity;
 import com.song.example.provider.ContentProviderTestActivity;
+import com.song.example.rxjava.RxJavaTestActivity;
 import com.song.example.scroller.ScrollerTestActivity;
 import com.song.example.service.ServiceTestActivity;
 
@@ -30,6 +31,8 @@ public class LauncherActivity extends AppCompatActivity {
     Button nestedscrollTest;
     @BindView(R.id.service_test)
     Button serviceTest;
+    @BindView(R.id.rxjava_test)
+    Button rxjavaTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +46,7 @@ public class LauncherActivity extends AppCompatActivity {
         scrollerTest.setOnClickListener(onClickListener);
         nestedscrollTest.setOnClickListener(onClickListener);
         serviceTest.setOnClickListener(onClickListener);
+        rxjavaTest.setOnClickListener(onClickListener);
     }
 
     static class OnClickListener implements View.OnClickListener {
@@ -71,6 +75,9 @@ public class LauncherActivity extends AppCompatActivity {
                     break;
                 case R.id.service_test:
                     intent = new Intent(context, ServiceTestActivity.class);
+                    break;
+                case R.id.rxjava_test:
+                    intent = new Intent(context, RxJavaTestActivity.class);
                     break;
             }
             if (intent != null) {

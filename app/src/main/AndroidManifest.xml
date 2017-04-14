@@ -15,24 +15,17 @@
         <activity
             android:name=".dagger.DaggerTestActivity"
             android:label="@string/title_activity_dagger_test" />
-
         <activity
             android:name=".nestedscroll.NestedScrollTestActivity"
             android:label="@string/title_activity_nestedscroll_test" />
-
         <activity
             android:name=".scroller.ScrollerTestActivity"
             android:label="@string/title_activity_scroller_test" />
-
         <activity
             android:name=".service.ServiceTestActivity"
             android:label="@string/title_activity_service_test" />
-
         <activity android:name=".service.MessengerActivity" />
-
-
         <activity android:name=".service.BinderActivity" />
-
 
         <service
             android:name=".service.BinderService"
@@ -43,7 +36,6 @@
                 <action android:name="com.song.example.service.BinderService" />
             </intent-filter>
         </service>
-
         <service
             android:name=".service.MessengerService"
             android:enabled="true"
@@ -53,7 +45,6 @@
                 <action android:name="com.song.example.service.MessengerService" />
             </intent-filter>
         </service>
-
 
         <activity
             android:name=".provider.ContentProviderTestActivity"
@@ -72,6 +63,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".rxjava.RxJavaTestActivity"></activity>
     </application>
 
 </manifest>
