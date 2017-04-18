@@ -7,6 +7,7 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import io.reactivex.disposables.CompositeDisposable;
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Retrofit;
@@ -35,5 +36,10 @@ public class ApiModule {
                 .build();
         return mRetrofit.create(Api.class);
 
+    }
+
+    @Provides
+    public CompositeDisposable provideCompositeDisposable(){
+        return new CompositeDisposable();
     }
 }

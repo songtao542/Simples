@@ -24,7 +24,7 @@ public class User {
     String receivedEventsUrl;// "https;////api.github.com/users/songtao542/received_events",
     String type;// "User",
     boolean siteAdmin;// false,
-    String name;// null,
+    public String name;// null,
     String company;// null,
     String blog;// null,
     String location;// null,
