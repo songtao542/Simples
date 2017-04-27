@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.song.example.account.AccountTestActivity;
 import com.song.example.dagger.DaggerTestActivity;
 import com.song.example.nestedscroll.NestedScrollTestActivity;
 import com.song.example.provider.ContentProviderTestActivity;
@@ -33,6 +34,8 @@ public class LauncherActivity extends AppCompatActivity {
     Button serviceTest;
     @BindView(R.id.rxjava_test)
     Button rxjavaTest;
+    @BindView(R.id.account_test)
+    Button accountTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,7 @@ public class LauncherActivity extends AppCompatActivity {
         nestedscrollTest.setOnClickListener(onClickListener);
         serviceTest.setOnClickListener(onClickListener);
         rxjavaTest.setOnClickListener(onClickListener);
+        accountTest.setOnClickListener(onClickListener);
     }
 
     static class OnClickListener implements View.OnClickListener {
@@ -78,6 +82,9 @@ public class LauncherActivity extends AppCompatActivity {
                     break;
                 case R.id.rxjava_test:
                     intent = new Intent(context, RxJavaTestActivity.class);
+                    break;
+                case R.id.account_test:
+                    intent = new Intent(context, AccountTestActivity.class);
                     break;
             }
             if (intent != null) {

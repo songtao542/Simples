@@ -6,6 +6,14 @@
     <string name="title_activity_dagger_test">Dagger Test Activity</string>
     <string name="title_activity_service_test">Service Test Activity</string>
     <string name="title_activity_rxjava_test">Rxjava Test Activity</string>
+    <string name="title_activity_account_test">Account Test Activity</string>
+    <string name="label_contentprovider">Book Provider</string>
 
     <string name="action_settings">Settings</string>
+    <string name="account_manager_type_test">com.song.example</string>
+    <string name="account_manager_test_name">AccountTestName</string>
+    <string name="pref_category">Category</string>
+    <string name="pref_summary">Summary</string>
+    <string name="pref_title">Title</string>
+
 </resources>

@@ -3,7 +3,11 @@
     package="com.song.example">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.GET_ACCOUNTS_PRIVILEGED" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
     <application
         android:name=".dagger.SimpleApplication"
         android:allowBackup="true"
@@ -54,6 +58,7 @@
             android:name=".provider.BookProvider"
             android:authorities="com.exam.book.provider"
             android:enabled="true"
+            android:label="@string/label_contentprovider"
             android:exported="true" />
 
         <activity android:name=".LauncherActivity">
@@ -63,7 +68,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".rxjava.RxJavaTestActivity"></activity>
+        <activity android:name=".rxjava.RxJavaTestActivity" />
+
+        <service
+            android:name=".account.TestAccountService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator_test" />
+        </service>
+
+        <service
+            android:name=".account.SyncService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/syncadapter_test" />
+        </service>
+
+        <activity android:name=".account.AccountTestActivity">
+            <intent-filter>
+                <action android:name="com.song.example.action.ACCOUNT_SETTINGS" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

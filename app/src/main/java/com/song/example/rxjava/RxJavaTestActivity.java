@@ -16,6 +16,8 @@ import com.song.example.dagger.User;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
+import java.util.concurrent.Callable;
+
 import javax.inject.Inject;
 
 import butterknife.BindView;
@@ -25,6 +27,8 @@ import io.reactivex.BackpressureStrategy;
 import io.reactivex.Flowable;
 import io.reactivex.FlowableEmitter;
 import io.reactivex.FlowableOnSubscribe;
+import io.reactivex.Maybe;
+import io.reactivex.MaybeObserver;
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
@@ -242,6 +246,34 @@ public class RxJavaTestActivity extends AppCompatActivity {
 
                     }
                 });
+
+        Maybe.fromCallable(new Callable<Integer>() {
+            @Override
+            public Integer call() throws Exception {
+                return 1;
+            }
+        }).subscribeOn(Schedulers.io())
+        .subscribe(new MaybeObserver<Integer>() {
+            @Override
+            public void onSubscribe(@NonNull Disposable d) {
+
+            }
+
+            @Override
+            public void onSuccess(@NonNull Integer integer) {
+
+            }
+
+            @Override
+            public void onError(@NonNull Throwable e) {
+
+            }
+
+            @Override
+            public void onComplete() {
+
+            }
+        });
     }
 
     @Override

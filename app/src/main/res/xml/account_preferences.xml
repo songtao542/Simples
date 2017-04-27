@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/pref_category" />
+    <PreferenceScreen
+        android:key="key"
+        android:summary="@string/pref_summary"
+        android:title="@string/pref_title">
+        <intent
+            android:action="com.song.example.action.ACCOUNT_SETTINGS"
+            android:targetClass="com.song.example.account.AccountTestActivity"
+            android:targetPackage="com.song.example" />
+    </PreferenceScreen>
+</PreferenceScreen>
