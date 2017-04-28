@@ -37,7 +37,16 @@ public class Authenticator extends AbstractAccountAuthenticator {
 //        b.putString(AccountManager.KEY_ACCOUNT_TYPE, accountType);
 //        return b;
 
-        Log.v(LogTag.TAG, "addAccount()");
+        Log.d(LogTag.TAG, "addAccount() !!!");
+        Log.d(LogTag.TAG, "accountType=" + accountType);
+        Log.d(LogTag.TAG, "authTokenType=" + authTokenType);
+        if (requiredFeatures != null) {
+            for (int i = 0; i < requiredFeatures.length; i++) {
+                Log.d(LogTag.TAG, "requiredFeatures[" + i + "]=" + requiredFeatures[i]);
+            }
+        }
+        Log.d(LogTag.TAG, "options=" + options);
+        Log.d(LogTag.TAG, "addAccount() !!!");
         final Intent intent = new Intent(mContext, AccountTestActivity.class);
         intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, response);
         final Bundle bundle = new Bundle();

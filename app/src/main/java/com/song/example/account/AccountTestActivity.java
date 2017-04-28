@@ -23,8 +23,8 @@ import butterknife.ButterKnife;
 
 public class AccountTestActivity extends AccountAuthenticatorActivity {
 
-    public static final String ACCOUNT_TYPE = "com.song.example";
-    public static final String AUTHORITY = BookContent.AUTHORITY;
+    public static final String ACCOUNT_TYPE = AccountConstants.ACCOUNT_TYPE;
+    public static final String AUTHORITY = AccountConstants.AUTHORITY;
 
     @BindView(R.id.username)
     EditText mUsername;

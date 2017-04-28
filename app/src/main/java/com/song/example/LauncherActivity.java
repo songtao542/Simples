@@ -1,12 +1,15 @@
 package com.song.example;
 
+import android.accounts.AccountManager;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.song.example.account.AccountConstants;
 import com.song.example.account.AccountTestActivity;
 import com.song.example.dagger.DaggerTestActivity;
 import com.song.example.nestedscroll.NestedScrollTestActivity;
@@ -20,7 +23,8 @@ import butterknife.ButterKnife;
 
 
 public class LauncherActivity extends AppCompatActivity {
-
+    public static final String ACCOUNT_TYPE = AccountConstants.ACCOUNT_TYPE;
+    public static final String AUTHORITY = AccountConstants.AUTHORITY;
 
     @BindView(R.id.dagger_test)
     Button daggerTest;
@@ -84,7 +88,14 @@ public class LauncherActivity extends AppCompatActivity {
                     intent = new Intent(context, RxJavaTestActivity.class);
                     break;
                 case R.id.account_test:
-                    intent = new Intent(context, AccountTestActivity.class);
+                    //intent = new Intent(context, AccountTestActivity.class);
+                    Log.d(LogTag.TAG, "click account_test button");
+                    AccountManager am = (AccountManager) context.getSystemService(Context.ACCOUNT_SERVICE);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("op1", "op1");
+                    bundle.putInt("op2", 2);
+                    bundle.putDouble("op3", 3.33);
+                    am.addAccount(ACCOUNT_TYPE, "auth_token_type", new String[]{"f1", "f2"}, bundle, null, null, null);
                     break;
             }
             if (intent != null) {
