@@ -6,6 +6,7 @@
     <string name="title_activity_dagger_test">Dagger Test Activity</string>
     <string name="title_activity_service_test">Service Test Activity</string>
     <string name="title_activity_rxjava_test">Rxjava Test Activity</string>
+    <string name="title_activity_okhttp_test">Okhttp Test Activity</string>
     <string name="title_activity_account_test">Account Test Activity</string>
     <string name="label_contentprovider">Book Provider</string>
 

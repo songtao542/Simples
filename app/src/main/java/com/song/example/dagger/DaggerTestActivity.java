@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.song.example.LogTag;
 import com.song.example.R;
 
 import java.util.List;
@@ -56,20 +57,20 @@ public class DaggerTestActivity extends AppCompatActivity {
             DaggerDaggerTestActivity_ActivityComponent.builder().applicationComponent(applicationComponent).build().inject(this);
             Call<User> userCall = mApiService.getUser("songtao542");
 
-            Log.d("DaggerTestActivity", "apiServiceFromApp=" + apiServiceFromApp);
-            Log.d("DaggerTestActivity", "mApiService=======" + mApiService);
-            Log.d("DaggerTestActivity", "mApiService==apiServiceFromApp : " + (mApiService == apiServiceFromApp));
-            Log.d("DaggerTestActivity", "mApiService.mApiParser=" + mApiService.mApiParser);
+            Log.d(LogTag.TAG, "apiServiceFromApp=" + apiServiceFromApp);
+            Log.d(LogTag.TAG, "mApiService=======" + mApiService);
+            Log.d(LogTag.TAG, "mApiService==apiServiceFromApp : " + (mApiService == apiServiceFromApp));
+            Log.d(LogTag.TAG, "mApiService.mApiParser=" + mApiService.mApiParser);
 
             userCall.enqueue(new Callback<User>() {
                 @Override
                 public void onResponse(Call<User> call, Response<User> response) {
-                    Log.d("DaggerTestActivity", "onResponse" + response.body());
+                    Log.d(LogTag.TAG, "onResponse" + response.body());
 
                     GsonBuilder builder = new GsonBuilder()
                             .setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES);
                     Gson gson = builder.create();
-                    Log.d("DaggerTestActivity", "user:" + gson.toJson(response.body()));
+                    Log.d(LogTag.TAG, "user to json:" + gson.toJson(response.body()));
                     mTextView.setText("Response:" + response.body());
                 }
 
@@ -81,13 +82,13 @@ public class DaggerTestActivity extends AppCompatActivity {
 
             List<String> providers = mLocationManager.getAllProviders();
             for (String s : providers) {
-                Log.d("DaggerTestActivity", "provider:" + s);
+                Log.d(LogTag.TAG, "provider:" + s);
             }
-            Log.d("DaggerTestActivity", "mTestObject:" + mTestObject);
+            Log.d(LogTag.TAG, "mTestObject:" + mTestObject);
 
-            Log.d("DaggerTestActivity", "mTestObject.ApiService == mApiService " + (mTestObject.mApiService == mApiService));
-            Log.d("DaggerTestActivity", "mTestObject.mContext == mApplicationContext " + (mTestObject.mContext == mApplicationContext));
-            Log.d("DaggerTestActivity", "mTestObject.mLocationManager == mLocationManager " + (mTestObject.mLocationManager == mLocationManager));
+            Log.d(LogTag.TAG, "mTestObject.ApiService == mApiService " + (mTestObject.mApiService == mApiService));
+            Log.d(LogTag.TAG, "mTestObject.mContext == mApplicationContext " + (mTestObject.mContext == mApplicationContext));
+            Log.d(LogTag.TAG, "mTestObject.mLocationManager == mLocationManager " + (mTestObject.mLocationManager == mLocationManager));
         } catch (Exception e) {
             e.printStackTrace();
         }

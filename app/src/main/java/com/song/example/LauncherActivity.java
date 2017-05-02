@@ -13,6 +13,7 @@ import com.song.example.account.AccountConstants;
 import com.song.example.account.AccountTestActivity;
 import com.song.example.dagger.DaggerTestActivity;
 import com.song.example.nestedscroll.NestedScrollTestActivity;
+import com.song.example.okhttp.OkhttpTestActivity;
 import com.song.example.provider.ContentProviderTestActivity;
 import com.song.example.rxjava.RxJavaTestActivity;
 import com.song.example.scroller.ScrollerTestActivity;
@@ -40,6 +41,8 @@ public class LauncherActivity extends AppCompatActivity {
     Button rxjavaTest;
     @BindView(R.id.account_test)
     Button accountTest;
+    @BindView(R.id.okhttp_test)
+    Button okhttpTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +57,7 @@ public class LauncherActivity extends AppCompatActivity {
         nestedscrollTest.setOnClickListener(onClickListener);
         serviceTest.setOnClickListener(onClickListener);
         rxjavaTest.setOnClickListener(onClickListener);
+        okhttpTest.setOnClickListener(onClickListener);
         accountTest.setOnClickListener(onClickListener);
     }
 
@@ -86,6 +90,9 @@ public class LauncherActivity extends AppCompatActivity {
                     break;
                 case R.id.rxjava_test:
                     intent = new Intent(context, RxJavaTestActivity.class);
+                    break;
+                case R.id.okhttp_test:
+                    intent = new Intent(context, OkhttpTestActivity.class);
                     break;
                 case R.id.account_test:
                     //intent = new Intent(context, AccountTestActivity.class);
