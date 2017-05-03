@@ -19,6 +19,7 @@ public class TileTestActivity extends AppCompatActivity {
         textView = (TextView) findViewById(R.id.textView);
         printUri("content://com.android.email.provider/account/1234");
         printUri("content://com.android.email.provider/account?name=song");
+
     }
 
     private void printUri(String uristr) {

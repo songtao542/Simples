@@ -25,5 +25,6 @@
     android:icon="@mipmap/ic_launcher"
     android:smallIcon="@mipmap/ic_launcher"
     android:label="@string/account_manager_test_name"
+    android:userVisible="true"
     android:accountPreferences="@xml/account_preferences"
 />

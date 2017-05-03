@@ -6,12 +6,15 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="editTextStyle">@style/MyEditTextStyle</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="MyEditTextStyle" parent="Widget.AppCompat.EditText"></style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -20,9 +23,11 @@
     <style name="MyTheme" parent="android:Theme.Holo.Light">
 
     </style>
+
     <style name="MyTheme1" parent="@android:style/Theme.Holo.Light">
 
     </style>
+
     <style name="MyTheme2" parent="MyTheme">
 
     </style>

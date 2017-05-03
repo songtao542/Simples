@@ -47,7 +47,7 @@ public class Authenticator extends AbstractAccountAuthenticator {
         }
         Log.d(LogTag.TAG, "options=" + options);
         Log.d(LogTag.TAG, "addAccount() !!!");
-        final Intent intent = new Intent(mContext, AccountTestActivity.class);
+        final Intent intent = new Intent(mContext, AddAccountTestActivity.class);
         intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, response);
         final Bundle bundle = new Bundle();
         bundle.putParcelable(AccountManager.KEY_INTENT, intent);
@@ -57,7 +57,17 @@ public class Authenticator extends AbstractAccountAuthenticator {
 
     @Override
     public Bundle confirmCredentials(AccountAuthenticatorResponse response, Account account, Bundle options) throws NetworkErrorException {
-        return null;
+        Log.d(LogTag.TAG, "confirmCredentials() !!!");
+        Log.d(LogTag.TAG, "account=" + account);
+        Log.d(LogTag.TAG, "options=" + options);
+        Log.d(LogTag.TAG, "confirmCredentials() !!!");
+        final Intent intent = new Intent(mContext, ConfirmCredentialsTestActivity.class);
+        intent.putExtra(AccountManager.KEY_ACCOUNT_NAME, account.name);
+        intent.putExtra(AccountManager.KEY_ACCOUNT_TYPE, account.type);
+        intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE, response);
+        final Bundle bundle = new Bundle();
+        bundle.putParcelable(AccountManager.KEY_INTENT, intent);
+        return bundle;
     }
 
     @Override

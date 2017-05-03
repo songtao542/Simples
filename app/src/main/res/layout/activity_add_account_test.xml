@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.song.example.account.AccountTestActivity">
+
+    <TextView
+        android:id="@+id/label1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="UserName:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="126dp"
+        android:layout_height="39dp"
+        android:layout_marginLeft="51dp"
+        android:layout_marginStart="51dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label1"
+        app:layout_constraintLeft_toRightOf="@+id/label1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/label2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Password:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/label1"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="126dp"
+        android:layout_height="38dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginStart="55dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/label2"
+        app:layout_constraintLeft_toRightOf="@+id/label2"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="238dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="48dp"
+        android:onClick="handleAdd"
+        android:text="Add Account"
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        tools:layout_editor_absoluteX="16dp" />
+
+</android.support.constraint.ConstraintLayout>

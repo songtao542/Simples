@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
 
     <application
         android:name=".dagger.SimpleApplication"
@@ -44,7 +45,6 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
             </intent-filter>
         </service>
-
         <service
             android:name=".service.BinderService"
             android:enabled="true"
@@ -109,12 +109,18 @@
                 android:resource="@xml/syncadapter_test" />
         </service>
 
-        <activity android:name=".account.AccountTestActivity">
+        <activity
+            android:name=".account.AccountTestActivity"
+            android:exported="true" />
+        <activity
+            android:name=".account.AddAccountTestActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.song.example.action.ACCOUNT_SETTINGS" />
             </intent-filter>
         </activity>
-        <activity android:name=".okhttp.OkhttpTestActivity"></activity>
+        <activity android:name=".okhttp.OkhttpTestActivity" />
+        <activity android:name=".account.ConfirmCredentialsTestActivity" />
     </application>
 
 </manifest>
