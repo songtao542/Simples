@@ -9,16 +9,22 @@ import android.widget.TextView;
 import com.song.example.R;
 
 public class TileTestActivity extends AppCompatActivity {
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tile_test);
 
-        TextView textView = (TextView) findViewById(R.id.textView);
-        Uri uri = Uri.parse("content://com.android.email.provider/account/1234");
+        textView = (TextView) findViewById(R.id.textView);
+        printUri("content://com.android.email.provider/account/1234");
+        printUri("content://com.android.email.provider/account?name=song");
+    }
+
+    private void printUri(String uristr) {
+        Uri uri = Uri.parse(uristr);
         StringBuilder text = new StringBuilder();
-        text.append("uri=content://com.android.email.provider/account" + "\n");
+        text.append("uri=" + uristr + "\n");
         text.append("authority:" + uri.getAuthority() + "\n");
         text.append("authority encoded:" + uri.getEncodedAuthority() + "\n");
         text.append("host:" + uri.getHost() + "\n");
@@ -35,6 +41,7 @@ public class TileTestActivity extends AppCompatActivity {
         text.append("QueryParameterNames:" + uri.getQueryParameterNames() + "\n");
         text.append("PathSegments:" + uri.getPathSegments() + "\n");
         text.append("Port:" + uri.getPort() + "\n");
-        textView.setText(text.toString());
+        textView.append(text.toString());
+        textView.append("\n\n");
     }
 }
