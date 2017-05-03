@@ -50,6 +50,11 @@
             android:layout_height="60dp"
             android:text="@string/title_activity_okhttp_test" />
         <Button
+            android:id="@+id/tile_test"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="@string/title_activity_tile_test" />
+        <Button
             android:id="@+id/account_test"
             android:layout_width="match_parent"
             android:layout_height="60dp"

@@ -18,6 +18,7 @@ import com.song.example.provider.ContentProviderTestActivity;
 import com.song.example.rxjava.RxJavaTestActivity;
 import com.song.example.scroller.ScrollerTestActivity;
 import com.song.example.service.ServiceTestActivity;
+import com.song.example.tile.TileTestActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -43,6 +44,8 @@ public class LauncherActivity extends AppCompatActivity {
     Button accountTest;
     @BindView(R.id.okhttp_test)
     Button okhttpTest;
+    @BindView(R.id.tile_test)
+    Button tileTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,7 @@ public class LauncherActivity extends AppCompatActivity {
         serviceTest.setOnClickListener(onClickListener);
         rxjavaTest.setOnClickListener(onClickListener);
         okhttpTest.setOnClickListener(onClickListener);
+        tileTest.setOnClickListener(onClickListener);
         accountTest.setOnClickListener(onClickListener);
     }
 
@@ -94,8 +98,10 @@ public class LauncherActivity extends AppCompatActivity {
                 case R.id.okhttp_test:
                     intent = new Intent(context, OkhttpTestActivity.class);
                     break;
+                case R.id.tile_test:
+                    intent = new Intent(context, TileTestActivity.class);
+                    break;
                 case R.id.account_test:
-                    //intent = new Intent(context, AccountTestActivity.class);
                     Log.d(LogTag.TAG, "click account_test button");
                     AccountManager am = (AccountManager) context.getSystemService(Context.ACCOUNT_SERVICE);
                     Bundle bundle = new Bundle();
