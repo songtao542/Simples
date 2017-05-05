@@ -6,61 +6,76 @@
     android:layout_height="match_parent"
     tools:context="com.song.example.LauncherActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/dagger_test"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/title_activity_dagger_test" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/contentprovider_test"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/title_activity_contentprovider_test" />
+            <Button
+                android:id="@+id/dagger_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_dagger_test" />
 
-        <Button
-            android:id="@+id/scroller_test"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/title_activity_scroller_test" />
+            <Button
+                android:id="@+id/contentprovider_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_contentprovider_test" />
 
-        <Button
-            android:id="@+id/nestedscroll_test"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/title_activity_nestedscroll_test" />
-        <Button
-            android:id="@+id/service_test"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/title_activity_service_test" />
-        <Button
-            android:id="@+id/rxjava_test"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/title_activity_rxjava_test" />
-        <Button
-            android:id="@+id/okhttp_test"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/title_activity_okhttp_test" />
-        <Button
-            android:id="@+id/tile_test"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/title_activity_tile_test" />
-        <Button
-            android:id="@+id/account_test"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:text="@string/title_activity_account_test" />
+            <Button
+                android:id="@+id/scroller_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_scroller_test" />
+
+            <Button
+                android:id="@+id/nestedscroll_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_nestedscroll_test" />
+
+            <Button
+                android:id="@+id/service_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_service_test" />
+
+            <Button
+                android:id="@+id/rxjava_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_rxjava_test" />
+
+            <Button
+                android:id="@+id/okhttp_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_okhttp_test" />
+
+            <Button
+                android:id="@+id/tile_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_tile_test" />
+
+            <Button
+                android:id="@+id/account_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_account_test" />
+
+            <Button
+                android:id="@+id/camera_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_camera_test" />
 
 
-    </LinearLayout>
-
+        </LinearLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

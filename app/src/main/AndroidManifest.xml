@@ -121,6 +121,7 @@
         </activity>
         <activity android:name=".okhttp.OkhttpTestActivity" />
         <activity android:name=".account.ConfirmCredentialsTestActivity" />
+        <activity android:name=".camera.CameraTestActivity"></activity>
     </application>
 
 </manifest>

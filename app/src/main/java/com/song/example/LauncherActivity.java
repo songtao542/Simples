@@ -12,6 +12,7 @@ import android.widget.Button;
 
 import com.song.example.account.AccountConstants;
 import com.song.example.account.AccountTestActivity;
+import com.song.example.camera.CameraTestActivity;
 import com.song.example.dagger.DaggerTestActivity;
 import com.song.example.nestedscroll.NestedScrollTestActivity;
 import com.song.example.okhttp.OkhttpTestActivity;
@@ -45,6 +46,8 @@ public class LauncherActivity extends AppCompatActivity {
     Button okhttpTest;
     @BindView(R.id.tile_test)
     Button tileTest;
+    @BindView(R.id.camera_test)
+    Button cameraTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,7 @@ public class LauncherActivity extends AppCompatActivity {
         okhttpTest.setOnClickListener(onClickListener);
         tileTest.setOnClickListener(onClickListener);
         accountTest.setOnClickListener(onClickListener);
+        cameraTest.setOnClickListener(onClickListener);
     }
 
     static class OnClickListener implements View.OnClickListener {
@@ -102,6 +106,9 @@ public class LauncherActivity extends AppCompatActivity {
                     break;
                 case R.id.account_test:
                     intent = new Intent(context, AccountTestActivity.class);
+                    break;
+                case R.id.camera_test:
+                    intent = new Intent(context, CameraTestActivity.class);
                     break;
             }
             if (intent != null) {
