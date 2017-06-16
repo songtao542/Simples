@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.le.testapplication.ModeSingleTaskActivity">
+
+    <Button
+        android:id="@+id/toA"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="To A"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/toB"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="To B"
+        app:layout_constraintTop_toBottomOf="@id/toA" />
+
+    <Button
+        android:id="@+id/toSingleTask"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="To Single Task"
+        app:layout_constraintTop_toBottomOf="@id/toB" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.le.testapplication.DActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/root"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/toB1"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:gravity="center"
+                android:text="To B\nFLAG_ACTIVITY_CLEAR_TOP\nFLAG_ACTIVITY_SINGLE_TOP" />
+
+            <Button
+                android:id="@+id/toB11"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="To B\nFLAG_ACTIVITY_CLEAR_TOP" />
+
+            <Button
+                android:id="@+id/toB12"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="To B\nFLAG_ACTIVITY_SINGLE_TOP" />
+
+            <Button
+                android:id="@+id/toB2"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="To B\nFLAG_ACTIVITY_CLEAR_TASK\nFLAG_ACTIVITY_NEW_TASK" />
+
+            <Button
+                android:id="@+id/toB21"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="To B\nFLAG_ACTIVITY_CLEAR_TASK" />
+
+            <Button
+                android:id="@+id/toB22"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="To B\nFLAG_ACTIVITY_NEW_TASK" />
+
+            <Button
+                android:id="@+id/toB3"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="To B\nFLAG_ACTIVITY_CLEAR_TOP\nFLAG_ACTIVITY_NEW_TASK" />
+        </LinearLayout>
+
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

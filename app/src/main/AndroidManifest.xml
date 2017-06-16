@@ -122,6 +122,44 @@
         <activity android:name=".okhttp.OkhttpTestActivity" />
         <activity android:name=".account.ConfirmCredentialsTestActivity" />
         <activity android:name=".camera.CameraTestActivity"></activity>
+
+        <activity
+            android:name=".launchmodeflag.MainActivity"
+            android:label="Main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".launchmodeflag.AActivity"
+            android:label="A"/>
+        <activity
+            android:name=".launchmodeflag.BActivity"
+            android:label="B" />
+        <activity
+            android:name=".launchmodeflag.CActivity"
+            android:label="C" />
+        <activity
+            android:name=".launchmodeflag.DActivity"
+            android:label="D" />
+        <activity
+            android:name=".launchmodeflag.ModeSingleInstanceActivity"
+            android:label="Mode_SingleInstance"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name=".launchmodeflag.ModeSingleTopActivity"
+            android:label="Mode_SingleTop"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".launchmodeflag.ModeSingleTaskActivity"
+            android:label="Mode_SingleTask"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".launchmodeflag.OtherTaskAffinityActivity"
+            android:label="TaskAffinity_com.test.app"
+            android:taskAffinity="com.test.app"/>
     </application>
 
 </manifest>

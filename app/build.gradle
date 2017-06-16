@@ -93,14 +93,16 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
+    flavorDimensions "app"
     productFlavors {
         demo {
+            dimension "app"
             applicationId "com.song.demo"
             versionName "1.0_debug"
         }
 
         full {
+            dimension "app"
             applicationId "com.song.full"
             versionName "1.0_full"
         }
@@ -127,9 +129,9 @@ dependencies {
     // https://mvnrepository.com/artifact/com.squareup.okhttp3/logging-interceptor
 
 
-    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:appcompat-v7:25.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    compile 'com.android.support:design:25.3.1'
+    compile 'com.android.support:design:25.+'
     compile 'com.google.dagger:dagger:2.+'
     compile 'com.squareup.retrofit2:retrofit:2.2.0'
     compile 'com.squareup.retrofit2:adapter-rxjava2:2.2.0'
@@ -142,7 +144,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.+'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.5.1'
-    demoCompile 'com.android.support:cardview-v7:25.3.1'
-    fullCompile 'com.android.support:cardview-v7:25.3.1'
-    releaseCompile 'com.android.support:cardview-v7:25.3.1'
+    demoCompile 'com.android.support:cardview-v7:25.+'
+    fullCompile 'com.android.support:cardview-v7:25.+'
+    releaseCompile 'com.android.support:cardview-v7:25.+'
 }
