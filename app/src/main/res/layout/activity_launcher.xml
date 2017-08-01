@@ -74,6 +74,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:text="@string/title_activity_camera_test" />
+            <Button
+                android:id="@+id/jni_test"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/title_activity_jni_test" />
 
 
         </LinearLayout>

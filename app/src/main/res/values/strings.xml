@@ -10,6 +10,7 @@
     <string name="title_activity_tile_test">Tile Test Activity</string>
     <string name="title_activity_account_test">Account Test Activity</string>
     <string name="title_activity_camera_test">Camera Test Activity</string>
+    <string name="title_activity_jni_test">JNI Test Activity</string>
     <string name="label_contentprovider">Book Provider</string>
 
     <string name="action_settings">Settings</string>

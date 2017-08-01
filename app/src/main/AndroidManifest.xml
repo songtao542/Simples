@@ -121,8 +121,7 @@
         </activity>
         <activity android:name=".okhttp.OkhttpTestActivity" />
         <activity android:name=".account.ConfirmCredentialsTestActivity" />
-        <activity android:name=".camera.CameraTestActivity"></activity>
-
+        <activity android:name=".camera.CameraTestActivity" />
         <activity
             android:name=".launchmodeflag.MainActivity"
             android:label="Main">
@@ -134,7 +133,7 @@
         </activity>
         <activity
             android:name=".launchmodeflag.AActivity"
-            android:label="A"/>
+            android:label="A" />
         <activity
             android:name=".launchmodeflag.BActivity"
             android:label="B" />
@@ -159,7 +158,8 @@
         <activity
             android:name=".launchmodeflag.OtherTaskAffinityActivity"
             android:label="TaskAffinity_com.test.app"
-            android:taskAffinity="com.test.app"/>
+            android:taskAffinity="com.test.app" />
+        <activity android:name=".jni.JNITestActivity"></activity>
     </application>
 
 </manifest>

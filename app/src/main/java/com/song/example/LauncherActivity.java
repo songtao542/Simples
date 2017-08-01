@@ -1,19 +1,16 @@
 package com.song.example;
 
-import android.accounts.AccountManager;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import com.song.example.account.AccountConstants;
 import com.song.example.account.AccountTestActivity;
 import com.song.example.camera.CameraTestActivity;
 import com.song.example.dagger.DaggerTestActivity;
+import com.song.example.jni.JNITestActivity;
 import com.song.example.nestedscroll.NestedScrollTestActivity;
 import com.song.example.okhttp.OkhttpTestActivity;
 import com.song.example.provider.ContentProviderTestActivity;
@@ -48,6 +45,8 @@ public class LauncherActivity extends AppCompatActivity {
     Button tileTest;
     @BindView(R.id.camera_test)
     Button cameraTest;
+    @BindView(R.id.jni_test)
+    Button jniTest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +65,7 @@ public class LauncherActivity extends AppCompatActivity {
         tileTest.setOnClickListener(onClickListener);
         accountTest.setOnClickListener(onClickListener);
         cameraTest.setOnClickListener(onClickListener);
+        jniTest.setOnClickListener(onClickListener);
     }
 
     static class OnClickListener implements View.OnClickListener {
@@ -109,6 +109,9 @@ public class LauncherActivity extends AppCompatActivity {
                     break;
                 case R.id.camera_test:
                     intent = new Intent(context, CameraTestActivity.class);
+                    break;
+                case R.id.jni_test:
+                    intent = new Intent(context, JNITestActivity.class);
                     break;
             }
             if (intent != null) {
