@@ -16,8 +16,7 @@ TOOLCHAIN=""
 arch=""
 sysroot=""
 cross_prefix=""
-cpu=""
-extra_cflags="-marm"
+extra_cflags=""
 extra_ldflags=""
 config=""
 
@@ -33,7 +32,7 @@ case $1 in
     sysroot=${SYSROOT}
     TOOLCHAIN=${NDK}/toolchains/arm-linux-androideabi-${GCC_VERSION}/prebuilt/linux-x86_64
     cross_prefix=${TOOLCHAIN}/bin/arm-linux-androideabi-
-    cpu="cortex-a8"
+    extra_cflags="$extra_cflags -marm"
   ;;
   armeabi-v7a)
     arch='arm'
@@ -41,10 +40,9 @@ case $1 in
     sysroot=${SYSROOT}
     TOOLCHAIN=${NDK}/toolchains/arm-linux-androideabi-${GCC_VERSION}/prebuilt/linux-x86_64
     cross_prefix=${TOOLCHAIN}/bin/arm-linux-androideabi-
-    cpu="cortex-a8"
-    extra_cflags="$extra_cflags -march=armv7-a -mcpu=cortex-a8 -mfpu=vfpv3-d16 -mfloat-abi=softfp -mthumb"
+    extra_cflags="$extra_cflags -marm -march=armv7-a -mcpu=cortex-a8 -mfpu=vfpv3-d16 -mfloat-abi=softfp -mthumb"
     extra_ldflags="$extra_ldflags -Wl,--fix-cortex-a8"
-    config="$config --enable-neon --enable-thumb"
+    config="$config --cpu=cortex-a8 --enable-neon --enable-thumb"
   ;;
   arm64)
     arch='aarch64'
@@ -52,7 +50,7 @@ case $1 in
     sysroot=${SYSROOT}
     TOOLCHAIN=${NDK}/toolchains/aarch64-linux-android-${GCC_VERSION}/prebuilt/linux-x86_64
     cross_prefix=${TOOLCHAIN}/bin/aarch64-linux-android-
-    cpu="cortex-a8"
+    extra_cflags="$extra_cflags -marm"
     config="$config --enable-yasm"
   ;;
   x86)
@@ -61,9 +59,8 @@ case $1 in
     sysroot=${SYSROOT}
     TOOLCHAIN=${NDK}/toolchains/x86-${GCC_VERSION}/prebuilt/linux-x86_64
     cross_prefix=${TOOLCHAIN}/bin/i686-linux-android-
-    cpu="i686"
     extra_cflags="$extra_cflags -march=i686 -march=atom -msse3 -ffast-math -mfpmath=sse"
-    config="$config --enable-yasm"
+    config="$config --enable-yasm --cpu=i686"
   ;;
   x86_64)
     arch='x86_64'
@@ -71,14 +68,11 @@ case $1 in
     sysroot=${SYSROOT}
     TOOLCHAIN=${NDK}/toolchains/x86_64-${GCC_VERSION}/prebuilt/linux-x86_64
     cross_prefix=${TOOLCHAIN}/bin/x86_64-linux-android-
-    cpu="i686"
-    extra_cflags="$extra_cflags -march=i686"
     config="$config --enable-yasm"
   ;;
 esac
 
-
-echo "cpu=$cpu"
+echo "arch=$arch"
 echo "PREFIX=$prefix"
 echo "SYSROOT=$SYSROOT"
 echo "TOOLCHAIN=$TOOLCHAIN"
@@ -104,7 +98,7 @@ export TMPDIR="$(pwd)/tmp"
 --disable-symver \
 --cross-prefix=${cross_prefix} \
 --target-os=linux \
---arch=${cpu} \
+--arch=${arch} \
 --extra-libs=-lgcc \
 --enable-cross-compile \
 --sysroot=${sysroot} \
