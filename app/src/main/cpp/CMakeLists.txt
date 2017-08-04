@@ -10,6 +10,14 @@ cmake_minimum_required(VERSION 3.4.1)
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/../../../libs/${ANDROID_ABI}/ )
+
+INCLUDE (ffmpeg/CMakeLists.txt)
+
+file(GLOB lame_src *.cpp lame/*.c)
+
+set(lame_src ${lame_src})
+
 add_library( # Sets the name of the library.
              lame-lib
 
@@ -17,8 +25,10 @@ add_library( # Sets the name of the library.
              SHARED
 
              # Provides a relative path to your source file(s).
-             src/main/cpp/lame_lib.cpp src/main/cpp/lame/bitstream.c src/main/cpp/lame/version.c src/main/cpp/lame/presets.c src/main/cpp/lame/set_get.c src/main/cpp/lame/lame.c src/main/cpp/lame/fft.c src/main/cpp/lame/quantize_pvt.c src/main/cpp/lame/mpglib_interface.c src/main/cpp/lame/takehiro.c src/main/cpp/lame/vbrquantize.c src/main/cpp/lame/newmdct.c src/main/cpp/lame/reservoir.c src/main/cpp/lame/VbrTag.c src/main/cpp/lame/gain_analysis.c src/main/cpp/lame/psymodel.c src/main/cpp/lame/id3tag.c src/main/cpp/lame/tables.c src/main/cpp/lame/util.c src/main/cpp/lame/encoder.c src/main/cpp/lame/quantize.c )
+             ${lame_src} )
 
+#set_target_properties( lame-lib PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}/liblame-lib.so )
+MESSAGE(STATUS "libsdir=${CMAKE_CURRENT_SOURCE_DIR}/../../../libs/${ANDROID_ABI}/")
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
 # default, you only need to specify the name of the public NDK library
@@ -42,3 +52,4 @@ target_link_libraries( # Specifies the target library.
                        # Links the target library to the log library
                        # included in the NDK.
                        ${log-lib} )
+
