@@ -11,6 +11,7 @@ import com.song.example.account.AccountTestActivity;
 import com.song.example.camera.CameraTestActivity;
 import com.song.example.dagger.DaggerTestActivity;
 import com.song.example.jni.JNITestActivity;
+import com.song.example.jni.PlayerActivity;
 import com.song.example.nestedscroll.NestedScrollTestActivity;
 import com.song.example.okhttp.OkhttpTestActivity;
 import com.song.example.provider.ContentProviderTestActivity;
@@ -47,6 +48,8 @@ public class LauncherActivity extends AppCompatActivity {
     Button cameraTest;
     @BindView(R.id.jni_test)
     Button jniTest;
+    @BindView(R.id.jni_player)
+    Button jniPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +69,7 @@ public class LauncherActivity extends AppCompatActivity {
         accountTest.setOnClickListener(onClickListener);
         cameraTest.setOnClickListener(onClickListener);
         jniTest.setOnClickListener(onClickListener);
+        jniPlayer.setOnClickListener(onClickListener);
     }
 
     static class OnClickListener implements View.OnClickListener {
@@ -112,6 +116,9 @@ public class LauncherActivity extends AppCompatActivity {
                     break;
                 case R.id.jni_test:
                     intent = new Intent(context, JNITestActivity.class);
+                    break;
+                    case R.id.jni_player:
+                    intent = new Intent(context, PlayerActivity.class);
                     break;
             }
             if (intent != null) {

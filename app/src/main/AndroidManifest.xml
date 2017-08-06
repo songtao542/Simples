@@ -161,7 +161,8 @@
             android:name=".launchmodeflag.OtherTaskAffinityActivity"
             android:label="TaskAffinity_com.test.app"
             android:taskAffinity="com.test.app" />
-        <activity android:name=".jni.JNITestActivity"></activity>
+        <activity android:name=".jni.JNITestActivity" />
+        <activity android:name=".jni.PlayerActivity"></activity>
     </application>
 
 </manifest>

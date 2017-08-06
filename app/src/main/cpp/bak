@@ -1,0 +1,121 @@
+file(GLOB lame_src lame_lib.cpp lame/*.c)
+
+set(lame_src ${lame_src})
+
+add_library( # Sets the name of the library.
+             lame-lib
+
+             # Sets the library as a shared library.
+             SHARED
+
+             # Provides a relative path to your source file(s).
+             ${lame_src} )
+
+#set_target_properties( lame-lib PROPERTIES IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/libs/${ANDROID_ABI}/liblame-lib.so )
+MESSAGE(STATUS "libsdir=${CMAKE_CURRENT_SOURCE_DIR}/../../../libs/${ANDROID_ABI}/")
+# Searches for a specified prebuilt library and stores the path as a
+# variable. Because CMake includes system libraries in the search path by
+# default, you only need to specify the name of the public NDK library
+# you want to add. CMake verifies that the library exists before
+# completing its build.
+
+find_library( # Sets the name of the path variable.
+              log-lib
+
+              # Specifies the name of the NDK library that
+              # you want CMake to locate.
+              log )
+
+# Specifies libraries CMake should link to your target library. You
+# can link multiple libraries, such as libraries you define in this
+# build script, prebuilt third-party libraries, or system libraries.
+
+target_link_libraries( # Specifies the target library.
+                       lame-lib
+
+                       # Links the target library to the log library
+                       # included in the NDK.
+                       ${log-lib} )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+file(GLOB ffmpeg_src *.cpp)
+
+set(ffmpeg_src ${ffmpeg_src})
+
+add_library( # Sets the name of the library.
+             ffmpeg-lib
+
+             # Sets the library as a shared library.
+             SHARED
+
+             # Provides a relative path to your source file(s).
+             ${ffmpeg_src} )
+
+INCLUDE_DIRECTORIES(ffmpeg/include)
+
+set(ffmpeg_static_lib_dir ${CMAKE_CURRENT_SOURCE_DIR}/../../../../ffmpeg-3.3.3/build/android/${ANDROID_ABI}/lib)
+
+#string(REPLACE ";" " " ffmpeg_static_lib ${ffmpeg_static_lib})
+
+#MESSAGE(STATUS "ffmpeg_static_lib0=${CMAKE_CURRENT_SOURCE_DIR}/../../../../ffmpeg-3.3.3/build/android/${ANDROID_ABI}/lib/")
+MESSAGE(STATUS "ffmpeg_static_lib1=${ffmpeg_static_lib_dir}/libswscale.a")
+
+#add_definitions(-Iffmpeg/include -L${ffmpeg_static_lib_dir}  -lavformat -lm -lz -pthread -lgcc)
+
+#add_library(avcodec STATIC IMPORTED)
+#set_target_properties(avcodec PROPERTIES IMPORTED_LOCATION ${ffmpeg_static_lib_dir}/libavcodec.a)
+
+#add_library(avfilter STATIC IMPORTED)
+#set_target_properties(avfilter PROPERTIES IMPORTED_LOCATION ${ffmpeg_static_lib_dir}/libavfilter.a)
+
+#add_library(avformat STATIC IMPORTED)
+#set_target_properties(avformat PROPERTIES IMPORTED_LOCATION ${ffmpeg_static_lib_dir}/libavformat.a)
+
+#add_library(avutil STATIC IMPORTED)
+#set_target_properties(avutil PROPERTIES IMPORTED_LOCATION ${ffmpeg_static_lib_dir}/libavutil.a)
+
+#add_library(swresample STATIC IMPORTED)
+#set_target_properties(swresample PROPERTIES IMPORTED_LOCATION ${ffmpeg_static_lib_dir}/libswresample.a)
+
+#add_library(swscale STATIC IMPORTED)
+#et_target_properties(swscale PROPERTIES IMPORTED_LOCATION ${ffmpeg_static_lib_dir}/libswscale.a)
+
+target_link_libraries( # Specifies the target library.
+                       ffmpeg-lib
+
+                       # Links the target library to the log library
+                       # included in the NDK.
+                       ${log-lib}
+                       #avutil
+                       #avfilter
+                       #avformat
+                       #avcodec
+                       #swresample
+                       #swscale
+                       ${ffmpeg_static_lib_dir}/libswresample.a
+                       ${ffmpeg_static_lib_dir}/libswscale.a
+                       ${ffmpeg_static_lib_dir}/libavutil.a
+                       ${ffmpeg_static_lib_dir}/libavcodec.a
+                       ${ffmpeg_static_lib_dir}/libavformat.a
+                       ${ffmpeg_static_lib_dir}/libavfilter.a
+                       )
+
+
+${ffmpeg_static_lib_dir}/libswresample.a
+                 ${ffmpeg_static_lib_dir}/libswscale.a
+                 ${ffmpeg_static_lib_dir}/libavutil.a
+                 ${ffmpeg_static_lib_dir}/libavcodec.a
+                 ${ffmpeg_static_lib_dir}/libavformat.a
+                 ${ffmpeg_static_lib_dir}/libavfilter.a
