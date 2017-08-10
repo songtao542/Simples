@@ -1,4 +1,4 @@
-prefix=/Users/wangsongtao/git/Simples/ffmpeg-3.3.3/build/android/arm64-v8a
+prefix=/home/song/src/AndroidStudioProject/Simples/ffmpeg-3.3.3/build/android/arm64-v8a
 exec_prefix=${prefix}
 libdir=${prefix}/lib
 includedir=${prefix}/include

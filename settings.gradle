@@ -1,1 +1,1 @@
-include ':app', ':library', ':algorithms_impl', ':otherapp'
+include ':app', ':library', ':algorithms_impl', ':otherapp', ':archcomponents'

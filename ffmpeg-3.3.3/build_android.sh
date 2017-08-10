@@ -44,9 +44,9 @@ case $1 in
     sysroot=${SYSROOT}
     TOOLCHAIN=${NDK}/toolchains/arm-linux-androideabi-${GCC_VERSION}/prebuilt/${OS}-x86_64
     cross_prefix=${TOOLCHAIN}/bin/arm-linux-androideabi-
-    extra_cflags="$extra_cflags -marm -march=armv7-a -mcpu=cortex-a8 -mfpu=vfpv3-d16 -mfloat-abi=softfp -mthumb"
+    extra_cflags="$extra_cflags -marm -march=armv7-a -mcpu=cortex-a8 -mfpu=vfpv3-d16 -mfloat-abi=softfp"
     extra_ldflags="$extra_ldflags -Wl,--fix-cortex-a8"
-    config="$config --cpu=cortex-a8 --enable-neon --enable-thumb"
+    config="$config --cpu=cortex-a8 --enable-neon"
   ;;
   arm64-v8a)
     arch='aarch64'
@@ -117,11 +117,12 @@ make install
 
 
 
-#build_one armeabi
+build_one armeabi
 echo "---------------------------------------------------------------------------"
-#build_one armeabi-v7a
+build_one armeabi-v7a
 echo "---------------------------------------------------------------------------"
-#build_one x86
+build_one x86
 echo "---------------------------------------------------------------------------"
-#build_one x86_64
+build_one x86_64
+echo "---------------------------------------------------------------------------"
 build_one arm64-v8a

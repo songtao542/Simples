@@ -4,6 +4,7 @@ ext{
     compileSdk = 25
     buildTools = "25.0.2"
     supportVersion = "26.0.0-alpha1"
+    archVersion = "1.0.0-alpha5"
     constraintVersion = "1.0.2"
     minSdk = 23
     targetSdk = 25
@@ -25,8 +26,10 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
         jcenter()
         mavenCentral()
+        //maven { url 'https://maven.google.com' }
     }
 }
 

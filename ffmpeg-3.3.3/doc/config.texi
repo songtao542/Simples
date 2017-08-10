@@ -334,7 +334,7 @@
 @set have-inline-asm-labels yes
 @set have-inline-asm-nonlocal-labels yes
 @set have-pragma-deprecated yes
-@c @set have-rsync-contimeout no
+@set have-rsync-contimeout yes
 @c @set have-symver-asm-label no
 @set have-symver-gnu-asm yes
 @c @set have-vfp-args no
@@ -363,7 +363,7 @@
 @c @set have-libdc1394-1 no
 @c @set have-libdc1394-2 no
 @set have-makeinfo yes
-@c @set have-makeinfo-html no
+@set have-makeinfo-html yes
 @c @set have-mmal-parameter-video-max-num-callbacks no
 @set have-perl yes
 @set have-pod2man yes
@@ -388,7 +388,7 @@
 @set config-muxers yes
 @set config-protocols yes
 @c @set config-doc no
-@c @set config-htmlpages no
+@set config-htmlpages yes
 @set config-manpages yes
 @set config-podpages yes
 @set config-txtpages yes
